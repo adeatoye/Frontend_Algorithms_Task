@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithms</title>
+</head>
+<body>
+    <script>
+                
+        convertFahrToCelsius = (fahr) =>{
+
+            // C = (f-32) / 1.8           
+            let C = (fahr-32)/1.8;
+            let ans = C.toFixed(4);
+                      
+            if(typeof(fahr) == "number" || typeof(fahr) == "string"){
+                console.log(ans);
+            }else{
+                console.log(`${fahr} is not a valid number but a/an ${typeof(fahr)}`);
+            }
+            
+
+        }
+
+        convertFahrToCelsius(1);
+
+        checkYuGiOh = (n) =>{
+
+        }
+
+
+    </script>
+</body>
+</html>
+
+
