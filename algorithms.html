@@ -7,73 +7,102 @@
     <title>Algorithms</title>
 </head>
 <body>
+
+    <div>        
+        <h2>Question 1: A Function that converts to celsius</h2>              
+    </div>
+        <h2>Question 2: A Function that replaces number with "yu", "gi", and "oh"</h2>
+    <div>
+
+    </div>
     <script>
-                
-        convertFahrToCelsius = (fahr) =>{
 
-            // C = (f-32) / 1.8           
-            let C = (fahr-32)/1.8;
-            let ans = C.toFixed(4);
-                      
-            if(typeof(fahr) == "number" || typeof(fahr) == "string"){
-                console.log(ans);
-            }else{
-                console.log(`${fahr} is not a valid number but a/an ${typeof(fahr)}`);
-            }
+        function convertFahrToCelsius(num) {
+                    
+            let C = (Number(num)-32)/1.8;
+            let ans = C.toFixed(4);                
             
-
+                           
+            if(Array.isArray(num)){
+                console.log(`${JSON.stringify(num)} is not a valid number but a/an array`);
+            }else if(num === "" || num === " "){
+                console.log(`${JSON.stringify(num)} is not a valid number but a/an ${typeof(num)}`);
+            }    
+            else if(isNaN(num)){
+                console.log(`${JSON.stringify(num)} is not a valid number but a/an ${typeof(num)}`);
+            }          
+            else if(typeof(num) === "boolean" || num === "" || num === ""){
+                console.log(`${JSON.stringify(num)} is not a valid number but a/an ${typeof(num)}`);
+            }          
+            else if(typeof(num) == "object"){
+                console.log(`${JSON.stringify(num)} is not a valid number but a/an ${typeof(num)}`);
+            }else{
+                console.log(ans);
+            }          
+            
+            
         }
 
         convertFahrToCelsius(1);
 
         checkYuGiOh = (n) =>{
-            
-                let result = n;
+
+            let result = Number(n);
 
             result = [];
 
-            if(typeof(n) == "number" || typeof(n) == "string"){
 
-                for(i = 1; i < n; i++){
-                    if(i === 10 ){
-                        
+                for(i = 1; i <= n; i++){
+
+                    if(i % 2 == 0 && i % 3 == 0 && i % 5 == 0){                        
+                        result.push("yu-gi-oh");
+                    }                    
+                    else if(i % 2 == 0 && i % 5 == 0){                        
                         result.push("yu-oh");
                     }
-                    if(i === 30 ){
-                        
-                        result.push("yu-gi-oh");
+                    else if(i % 3 == 0 && i % 5 == 0){                        
+                        result.push("gi-oh");
                     }
-                    else if(i % 2 == 0){
-                        
+                    else if(i % 2 == 0 && i % 3 == 0){                        
+                        result.push("yu-gi");
+                    }
+                    else if(i % 2 == 0){                        
                         result.push("yu");
                     }
-                    else if(i % 3 == 0){
-                        
+                    else if(i % 3 == 0){                        
                         result.push("gi");
                     }
-                    else if(i % 5 == 0){
-                        
+                    else if(i % 5 == 0){                        
                         result.push("oh");
                     }
                     else{
                         result.push(i);
                     }
-                           
+                    
                     
                 }
-                console.log(result);
                 
                 
-            }else{                
-                
-                console.log(`${n} is not a valid number but a/an ${typeof(n)}`);
-                
-            }
+                if(Array.isArray(n)){
+                    console.log(`Invalid parameter: ${JSON.stringify(n)}`);
+                }else if(n === "" || n === " "){
+                    console.log(`Invalid parameter: ${JSON.stringify(n)}`);
+                }    
+                else if(isNaN(n)){
+                    console.log(`Invalid parameter: ${JSON.stringify(n)}`);
+                }          
+                else if(typeof(n) === "boolean" || n === "" || n === ""){
+                    console.log(`Invalid parameter: ${JSON.stringify(n)}`);
+                }          
+                else if(typeof(num) == "object"){
+                    console.log(`Invalid parameter: ${JSON.stringify(n)}`);
+                }else{
+                    console.log(result);
+                }   
+            
 
         }
-        
-        checkYuGiOh(31);
-
+        checkYuGiOh(30);
 
     </script>
 </body>
